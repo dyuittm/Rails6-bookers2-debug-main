@@ -20,19 +20,28 @@
   		<h2>Book detail</h2>
   		<table class='table'>
   		  <tr>
-          <td><%= link_to(@book.user) do %>
-            <%= image_tag @book.user.get_profile_image, size:"100x100" %><br>
-            <%= @book.user.name %>
+          <td>
+            <%= link_to(@book.user) do %>
+              <%= image_tag @book.user.get_profile_image, size:"100x100" %><br>
+              <%= @book.user.name %>
             <% end %>
           </td>
           <td><%= link_to @book.title, @book %></td>
           <td><%= @book.body %></td>
-          <% if @user == current_user %>
-            <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %></td>
-            <td><%= link_to 'Destroy', book_path(@book), method: :delete, "dataconfirm"=>'本当に消しますか？', class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
-          <% end %>
+          <td>
+            <p>コメント数:<%= @book.book_comments.count %></p>
+          </td>
         </tr>
       </table>
+      <% @book.book_comments.each do |book_comment| %>
+        <%= image_tag book_comment.user.get_profile_image, size:'100×100' %>
+        <%= book_comment.comment %>
+        <%= link_to 'Destroy', book_path(@book), method: :delete, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%>
+      <% end %>
+      <%= form_with model: [@book, @book_comment] do |f| %>
+        <%= f.text_area :comment, row: '5' %>
+        <%= f.submit"送信" %>
+      <% end %>
     </div>
   </div>
 </div>
