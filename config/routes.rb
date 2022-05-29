@@ -7,9 +7,10 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create, :destroy]
   end
   resources :users, only: [:index, :show, :edit, :update] do
-    resource :relationships, only: [:create, :destroy]
+    resource :relationships, only: [:create, :destroy, :index]
     get 'followings' => 'relationships#followings', as:'followings'
     get 'followers' => 'relationships#followers', as:'follwers'
+    get 'relationships' => 'relationships#index', as:'follow'
   end
   get "home/about" => "homes#about"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

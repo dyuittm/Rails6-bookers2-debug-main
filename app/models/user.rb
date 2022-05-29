@@ -33,6 +33,6 @@ class User < ApplicationRecord
   end
 
   def following?(user)
-    following.include?(user)
+    followings.include?(user)
   end
 end
