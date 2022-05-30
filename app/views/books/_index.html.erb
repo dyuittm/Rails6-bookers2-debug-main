@@ -13,6 +13,7 @@
         <td>
           <%= link_to (book.user) do %>
             <%= image_tag book.user.get_profile_image, size:'50x50' %>
+            <%= book.user.name %>
           <% end %>
         </td>
         <td><%= link_to book.title,book, class: "book_#{book.id}" %></td>
