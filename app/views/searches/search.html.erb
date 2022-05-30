@@ -1,0 +1,11 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-12">
+      <% if @range == "User" %>
+        <%= render 'user', users: @users%>
+      <% else %>
+        <%= render 'book', books: @books%>
+      <% end %>
+    </div>
+  </div>
+</div>
