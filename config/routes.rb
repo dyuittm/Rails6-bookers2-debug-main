@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'followers' => 'relationships#followers', as:'followers'
   end
   resources :groups do
-    get "join" => "groups#join"
+    resource :group_users, only: [:create, :destroy]
   end
   get "search" => "searches#search"
   get "home/about" => "homes#about"

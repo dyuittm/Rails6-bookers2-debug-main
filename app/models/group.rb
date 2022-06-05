@@ -1,6 +1,6 @@
 class Group < ApplicationRecord
   has_many :group_users
-  has_many :users, through: :group_users
+  has_many :users, through: :group_users, source: :user
   belongs_to :owner, class_name: 'User'
   has_one_attached :group_image
 
@@ -14,4 +14,8 @@ class Group < ApplicationRecord
   def is_owned_by?(user)
     owner.id == user.id
   end
+  def includesUser?(user)
+    group_users.exists?(user_id: user.id)
+  end
+
 end
