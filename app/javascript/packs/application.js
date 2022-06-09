@@ -5,7 +5,6 @@
 
 //= require jquery
 //= require rails-ujs
-//= require jquery.raty.js
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -16,7 +15,9 @@ import "popper.js"
 import "bootstrap"
 import '@fortawesome/fontawesome-free/js/all';
 import "../stylesheets/application"
+import "jquery.raty"
 
+window.jQuery = window.$ = require('jquery')
 
 Rails.start()
 Turbolinks.start()
