@@ -1,4 +1,4 @@
-<%= form_with model: book,local:true do |f| %>
+<%= form_with model: book, local:true do |f| %>
   <div class="form-group">
     <%= f.label :Title %>
     <%= f.text_field :title, class: 'form-control book_title' %>
@@ -10,4 +10,17 @@
   <div class="form-group">
     <%= f.submit 'Create Book', class: 'btn btn-success' %>
   </div>
+  <div id="rating-form">
+    <%= f.hidden_field :rate, id: :review_star %>
+  </div>
 <% end %>
+
+<script>
+  $('#rating-form').raty({
+    star0ff: "<%= asset_path('star-off.png') %>",
+    starOn: "<%= asset_path('star-on.png') %>",
+    scoreName: 'book[rate]',
+    half: false
+  });
+</script>
+

@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2022_06_04_010713) do
     t.text "comment"
     t.integer "user_id"
     t.integer "book_id"
-    t.float "star", default: 0.0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
