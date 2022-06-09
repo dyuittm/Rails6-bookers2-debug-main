@@ -23,7 +23,7 @@
           <%= render "favorites/favorite-btn", book: book %>
         </td>
         <td>
-          <div class="star-rate-<%= book.id %>"></div>
+          <div id="star-rate-<%= book.id %>"></div>
           <script>
             $("#star-rate-<%= book.id %>").raty({
               size: 36,

@@ -10,18 +10,19 @@
   <div class="form-group">
     <%= f.submit 'Create Book', class: 'btn btn-success' %>
   </div>
-  <div id="form_group" id="star">
+  <div class="form_group row" id="star">
     <%= f.hidden_field :rate, id: :review_star %>
   </div>
-<% end %>
-
-<script>
+  <script>
   $('#star').raty({
-    size: 36,
+    size : 36,
     star0ff: "<%= asset_path('star-off.png') %>",
     starOn: "<%= asset_path('star-on.png') %>",
     scoreName: 'book[rate]',
     half: false
   });
-</script>
+  </script>
+
+<% end %>
+
 
