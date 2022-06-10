@@ -1,0 +1,12 @@
+<div class="form_group row" id="star">
+  <%= f.hidden_field :rate, id: :review_star %>
+</div>
+<script>
+  $('#star').raty({
+    size : 36,
+    star0ff: "<%= asset_path("raty/star-off.png") %>",
+    starOn: "<%= asset_path("raty/star-on.png") %>",
+    scoreName: 'book[rate]',
+    half: false
+  });
+</script>

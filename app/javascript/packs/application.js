@@ -15,9 +15,10 @@ import "popper.js"
 import "bootstrap"
 import '@fortawesome/fontawesome-free/js/all';
 import "../stylesheets/application"
-import "jquery.raty"
 
 window.jQuery = window.$ = require('jquery')
+require('packs/jquery.raty')
+
 
 Rails.start()
 Turbolinks.start()

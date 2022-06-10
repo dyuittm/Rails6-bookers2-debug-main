@@ -23,18 +23,7 @@
           <%= render "favorites/favorite-btn", book: book %>
         </td>
         <td>
-          <div id="star-rate-<%= book.id %>"></div>
-          <script>
-            $("#star-rate-<%= book.id %>").raty({
-              size: 36,
-              star0ff: "<%= asset_path('star-off.png') %>",
-              starOn: "<%= asset_path('star-on.png') %>",
-              scoreName: 'book[rate]',
-              half: false,
-              readOnly: true,
-              score: <%= book.rate %>
-            });
-          </script>
+          <%= render "rates/view_rate", book: book %>
         </td>
       </tr>
     <% end %>
