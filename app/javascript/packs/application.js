@@ -16,7 +16,7 @@ import "bootstrap"
 import '@fortawesome/fontawesome-free/js/all';
 import "../stylesheets/application"
 
-window.jQuery = window.$ = require('jquery')
+window.$ = window.jQuery = require('jquery');
 require('packs/jquery.raty')
 
 
