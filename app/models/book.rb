@@ -9,6 +9,10 @@ class Book < ApplicationRecord
     less_than_or_equal_to: 5,
     greater_than_or_equal_to: 1}, presence: true
 
+  scope :latest, -> {order(created_at: :desc)}
+  scope :old, -> {order(created_at: :asc)}
+  scope :rate_count, -> {order(rate: :desc)}
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
